@@ -10,8 +10,11 @@ import java.util.List;
 public class CrudApp {
 
     private static SessionFactory factory;
+    private static RunSQLScript runSQLScript;
 
     public static void init() {
+        runSQLScript = new RunSQLScript();
+        runSQLScript.run();
         factory = new Configuration().configure("/crud/hibernate.cfg.xml").buildSessionFactory();
     }
 
